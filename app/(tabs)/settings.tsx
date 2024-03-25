@@ -25,19 +25,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "transparent",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
   label: {
     backgroundColor: "transparent",
     padding: 10,
     color: "gray",
     fontWeight: "400",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
   },
 });

@@ -1,3 +1,4 @@
+import Colors from "@/constants/Colors";
 import { Link } from "expo-router";
 import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 
@@ -10,7 +11,11 @@ const RepoListItem = ({ item }: RepoListItemProps) => {
     <Link href={`/${item.id}`} asChild>
       <Pressable style={styles.container}>
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.desc}>{item.description}</Text>
+        <Text style={styles.desc}>
+          {item.description === "null"
+            ? "No description available"
+            : item.description}
+        </Text>
       </Pressable>
     </Link>
   );
@@ -18,7 +23,7 @@ const RepoListItem = ({ item }: RepoListItemProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 5,
+    padding: 5,
   },
   title: {
     fontSize: 16,

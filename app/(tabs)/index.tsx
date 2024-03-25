@@ -12,6 +12,7 @@ import { fetchRepos } from "@/api/repositories";
 import { useQuery } from "@tanstack/react-query";
 import RepoListItem from "@/components/RepoListItem";
 import ErrorScreen from "@/components/ErrorScreen";
+import Colors from "@/constants/Colors";
 
 export default function TabOneScreen() {
   const [searchQuery, setSearchQuery] = useState("org:vacasaoss");
@@ -87,6 +88,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: Colors.light.background,
   },
   activityIndicator: {
     margin: 20,
