@@ -2,8 +2,8 @@ const headers = {
     accept: 'application/vnd.github+json',
 };
   
-export const fetchRepos = async () => {
-    const url = `https://api.github.com/search/repositories?q=org:vacasaoss&sort=stars&order=desc`;
+export const fetchRepos = async (searchParam: string) => {
+    const url = `https://api.github.com/search/repositories?q=${searchParam}&sort=stars&order=desc`;
     const options = {
       method: 'GET',
       headers,
@@ -11,11 +11,10 @@ export const fetchRepos = async () => {
     const res = await fetch(url, options);
     
     if (!res.ok) {
-      throw new Error('Failed to fetch movies');
+      throw new Error('Failed to fetch repos');
     }
   
     const json = await res.json();
-    console.log(json.items)
     return json.items;
 };
   
